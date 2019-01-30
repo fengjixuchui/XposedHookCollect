@@ -1,3 +1,5 @@
+// 从manifest.xml中android:name=”com.stub.StubApp”可知壳入口，先从壳里获取到context参数
+// 然后就可以通过context获得到360的classloader，之后只需要用这个classloader就可以hook了
 public class XposedHook implements IXposedHookLoadPackage{
     private String TAG = "Hook";
 
