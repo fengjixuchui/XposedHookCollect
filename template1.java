@@ -27,7 +27,7 @@ public class HookMain implements IXposedHookLoadPackage {
                 protected void afterHookedMethod(MethodHookParam param) throws Throwable {
 
                     Log.i("hook after result:",param.getResult().toString()); //打印返回值（String类型）
-                    param.setResult("111111111111");
+                    param.setResult("1");
                 }
             });
         }
