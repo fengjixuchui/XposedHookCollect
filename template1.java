@@ -14,7 +14,7 @@ public class HookMain implements IXposedHookLoadPackage {
         if (loadPackageParam.packageName.equals("com.example.tfs.xposedtest")) {    //过滤包名
             Class clasz = loadPackageParam.classLoader.loadClass("com.example.tfs.xposedtest.MainActivity"); //要hook的方法所在的类名
 
-            XposedHelpers.findAndHookMethod(clasz, "getIMEI",loadPackageParam.classLoader,String.class,String.class,String.class, new XC_MethodHook() { //要hook的方法名和参数类型，此处为三个String类型
+            XposedHelpers.findAndHookMethod(clasz, "getIMEI",String.class,String.class,String.class, new XC_MethodHook() { //要hook的方法名和参数类型，此处为三个String类型
 
                 @Override
                 protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
